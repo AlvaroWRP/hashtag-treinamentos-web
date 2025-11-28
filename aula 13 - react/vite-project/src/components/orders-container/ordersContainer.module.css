@@ -1,0 +1,14 @@
+.containerArea {
+    border: 1px solid #ccc;
+    padding: 24px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.title {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}

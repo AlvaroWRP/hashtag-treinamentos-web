@@ -4,9 +4,7 @@ class Stopwatch {
 
     start() {
         this.#intervalID = setInterval(() => {
-            console.log(
-                Stopwatch.formatTime(this.#elapsedTimeInSeconds)
-            );
+            console.log(Stopwatch.formatTime(this.#elapsedTimeInSeconds));
 
             this.checkTimerToStopScript();
 
@@ -33,10 +31,9 @@ class Stopwatch {
         const minutes = Math.floor((timeInSeconds % 3600) / 60);
         const seconds = timeInSeconds - hours * 3600 - minutes * 60;
 
-        return `${Stopwatch.addZeros(hours)
-            }:${Stopwatch.addZeros(minutes)
-            }:${Stopwatch.addZeros(seconds)
-            }`;
+        return `${Stopwatch.addZeros(hours)}:${Stopwatch.addZeros(minutes)}:${Stopwatch.addZeros(
+            seconds,
+        )}`;
     }
 
     static addZeros(originalNumber) {

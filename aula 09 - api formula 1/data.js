@@ -137,9 +137,9 @@ export function createConstructorsArray() {
     for (const driverObject of sortedDriversArray) {
         let { team, points } = driverObject;
 
-        const teamFound = constructorsArray.find(driver => driver.team === team);
+        const teamFound = constructorsArray.find((driver) => driver.team === team);
 
-        teamFound ? teamFound.points += points : constructorsArray.push({ team, points });
+        teamFound ? (teamFound.points += points) : constructorsArray.push({ team, points });
     }
 
     return constructorsArray;

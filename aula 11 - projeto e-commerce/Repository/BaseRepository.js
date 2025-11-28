@@ -14,12 +14,8 @@ class BaseRepository {
     }
 
     async insertOne(tableName, columnsArray, valuesArray) {
-        let variableFlags = Array.from(
-            new Array(
-                columnsArray.length
-            ).keys()
-        ).map(
-            index => `$${index + 1}`
+        let variableFlags = Array.from(new Array(columnsArray.length).keys()).map(
+            (index) => `$${index + 1}`,
         );
 
         const queryText = `INSERT INTO ${tableName} (${columnsArray}) VALUES (${variableFlags});`;

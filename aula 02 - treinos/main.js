@@ -62,8 +62,8 @@ const apiURL = 'http://www.omdbapi.com/?apikey=62e048dd&t=avengers&y=2014';
 // as requisições (feitas pelo comando "fetch()", o qual retorna uma promessa) devem receber o
 // parâmetro "await", que serve para esperar o cumprimento de uma promessa. No caso de serem usadas
 // dentro de uma função, essa função deve ser assíncrona, contendo o parâmetro "async"
-let data = await fetch(apiURL);  // retorna a resposta completa da requisição
-data = await data.json();  // filtra somente os dados fornecidos pelo json da api
+let data = await fetch(apiURL); // retorna a resposta completa da requisição
+data = await data.json(); // filtra somente os dados fornecidos pelo json da api
 
 print(data);
 print(data['Title']);
@@ -81,7 +81,9 @@ try {
 print('\n' + '------------------------------------------------------------'.repeat(2) + '\n');
 
 print(1);
-setTimeout(function () { print(2); }, 1500);
+setTimeout(function () {
+    print(2);
+}, 1500);
 print(3);
 
 print('\n' + '------------------------------------------------------------'.repeat(2) + '\n');
@@ -128,11 +130,13 @@ const promise = new Promise((resolve, reject) => {
 
 print(promise);
 
-promise.then(response => {
-    print(response);
-}).catch(error => {
-    print(error);
-});
+promise
+    .then((response) => {
+        print(response);
+    })
+    .catch((error) => {
+        print(error);
+    });
 
 print('\n' + '------------------------------------------------------------'.repeat(2) + '\n');
 
@@ -160,11 +164,15 @@ const promiseAll2 = new Promise((res, rej) => {
 
 const promiseAllArray = Promise.all([promiseAll1, promiseAll2]);
 
-print(promiseAllArray.then(response => {
-    print(response);
-}).catch(error => {
-    print(error);
-}));
+print(
+    promiseAllArray
+        .then((response) => {
+            print(response);
+        })
+        .catch((error) => {
+            print(error);
+        }),
+);
 
 print('\n' + '------------------------------------------------------------'.repeat(2) + '\n');
 
@@ -174,7 +182,7 @@ function personConstructor(personName, age) {
         age: age,
         sayHi: function () {
             console.log(`Name: ${this.personName} Age: ${this.age}`);
-        }
+        },
     };
 }
 
@@ -222,8 +230,8 @@ person4.sayHi();
 print('\n' + '------------------------------------------------------------'.repeat(2) + '\n');
 
 const yearlyBillsInDollars = [
-    150_000, 110_000, 90_000, 70_000, 100_000, 120_000,
-    130_000, 95_000, 120_000, 130_000, 120_000, 165_000,
+    150_000, 110_000, 90_000, 70_000, 100_000, 120_000, 130_000, 95_000, 120_000, 130_000, 120_000,
+    165_000,
 ];
 
 // const yearlyBillsInBrazilianReal = yearlyBillsInDollars.map(
@@ -232,20 +240,17 @@ const yearlyBillsInDollars = [
 
 // as arrow functions podem ter os parênteses omitidos no caso de apenas um parâmetro necessário, e
 // o retorno pode ser feito diretamente após a flecha se o corpo da função for de uma única linha
-const yearlyBillsInBrazilianReal = yearlyBillsInDollars.map(
-    monthlyValue => monthlyValue * 5.57
-);
+const yearlyBillsInBrazilianReal = yearlyBillsInDollars.map((monthlyValue) => monthlyValue * 5.57);
 
 print(yearlyBillsInBrazilianReal);
 
-const yearlyBillsHighProfits = yearlyBillsInDollars.filter(
-    value => value >= 130_000
-);
+const yearlyBillsHighProfits = yearlyBillsInDollars.filter((value) => value >= 130_000);
 
 print(yearlyBillsHighProfits);
 
 const yearlyBillsAverageValue = yearlyBillsInDollars.reduce(
-    (accumulator, currentValue) => accumulator + currentValue, 0
+    (accumulator, currentValue) => accumulator + currentValue,
+    0,
 );
 
 print(yearlyBillsAverageValue);

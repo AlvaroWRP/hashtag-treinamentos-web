@@ -13,7 +13,7 @@ class UserRepository extends BaseRepository {
         return await super.insertOne(
             'users',
             ['name', 'surname', 'email', 'password'],
-            ['nome2', 'sobrenome2', 'email2', 'senha2']
+            ['nome2', 'sobrenome2', 'email2', 'senha2'],
         );
     }
 }

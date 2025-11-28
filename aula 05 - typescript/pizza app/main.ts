@@ -1,21 +1,21 @@
 type Pizza = {
-    id: number,
-    pizzaName: string,
-    pizzaPrice: number,
-}
+    id: number;
+    pizzaName: string;
+    pizzaPrice: number;
+};
 
 type Order = {
-    orderID: number,
-    pizza: Pizza,
-    status: 'ordered' | 'completed',
-}
+    orderID: number;
+    pizza: Pizza;
+    status: 'ordered' | 'completed';
+};
 
 function addNewPizza(pizzaName: string, pizzaPrice: number): void {
-    pizzaMenu.push(
-        {
-            id: pizzaID++, pizzaName: pizzaName, pizzaPrice: pizzaPrice
-        }
-    );
+    pizzaMenu.push({
+        id: pizzaID++,
+        pizzaName: pizzaName,
+        pizzaPrice: pizzaPrice,
+    });
 }
 
 function placeOrder(pizzaName: string): Order | undefined {
@@ -26,7 +26,9 @@ function placeOrder(pizzaName: string): Order | undefined {
             cashInRegister += pizzaObject.pizzaPrice;
 
             const newOrder: Order = {
-                orderID: orderID++, pizza: pizzaObject, status: 'ordered'
+                orderID: orderID++,
+                pizza: pizzaObject,
+                status: 'ordered',
             };
 
             ordersQueue.push(newOrder);
@@ -51,26 +53,22 @@ function completeOrder(orderID: number): Order | undefined {
 }
 
 function getPizzaDetails(id: number | string): Pizza | string {
-    let pizza: Pizza | undefined
+    let pizza: Pizza | undefined;
 
     if (typeof id === 'number') {
-        pizza = pizzaMenu.find(
-            pizzaObject => pizzaObject.id === id
-        )
+        pizza = pizzaMenu.find((pizzaObject) => pizzaObject.id === id);
     } else if (typeof id === 'string') {
-        pizza = pizzaMenu.find(
-            pizzaObject => pizzaObject.pizzaName === id
-        )
+        pizza = pizzaMenu.find((pizzaObject) => pizzaObject.pizzaName === id);
     }
 
     if (pizza) {
-        return pizza
+        return pizza;
     }
 
-    return 'Nenhuma pízza encontrada'
+    return 'Nenhuma pízza encontrada';
 }
 
-let pizzaID = 1
+let pizzaID = 1;
 let orderID = 1;
 let cashInRegister = 100;
 
@@ -78,16 +76,24 @@ const ordersQueue: Order[] = [];
 
 const pizzaMenu: Pizza[] = [
     {
-        id: pizzaID++, pizzaName: 'Marguerita', pizzaPrice: 50
+        id: pizzaID++,
+        pizzaName: 'Marguerita',
+        pizzaPrice: 50,
     },
     {
-        id: pizzaID++, pizzaName: 'Mussarela', pizzaPrice: 55
+        id: pizzaID++,
+        pizzaName: 'Mussarela',
+        pizzaPrice: 55,
     },
     {
-        id: pizzaID++, pizzaName: 'Brasileira', pizzaPrice: 60
+        id: pizzaID++,
+        pizzaName: 'Brasileira',
+        pizzaPrice: 60,
     },
     {
-        id: pizzaID++, pizzaName: 'Cogumelos do Mario', pizzaPrice: 87
+        id: pizzaID++,
+        pizzaName: 'Cogumelos do Mario',
+        pizzaPrice: 87,
     },
 ];
 
@@ -112,4 +118,4 @@ console.log(getPizzaDetails(1));
 console.log(getPizzaDetails('Pizza maluca'));
 console.log(getPizzaDetails('Cogumelos do Mario'));
 
-console.log(pizzaMenu)
+console.log(pizzaMenu);

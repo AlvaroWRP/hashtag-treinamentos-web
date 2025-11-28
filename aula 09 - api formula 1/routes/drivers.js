@@ -15,7 +15,7 @@ router.get('/', (request, response) => {
 
 router.get('/:id', (request, response, next) => {
     const routeID = request.params.id;
-    const selectedDriver = sortedDriversArray.find(driver => driver.id === routeID);
+    const selectedDriver = sortedDriversArray.find((driver) => driver.id === routeID);
 
     if (!selectedDriver) {
         const myError = new Error();
@@ -96,7 +96,7 @@ router.put('/:id', (request, response, next) => {
     }
 
     const routeID = request.params.id;
-    const selectedDriver = sortedDriversArray.find(driver => driver.id === routeID);
+    const selectedDriver = sortedDriversArray.find((driver) => driver.id === routeID);
 
     if (!selectedDriver) {
         const myError = new Error();
@@ -120,7 +120,7 @@ router.put('/:id', (request, response, next) => {
 
 router.delete('/:id', (request, response, next) => {
     const routeID = request.params.id;
-    const selectedDriver = sortedDriversArray.find(driver => driver.id === routeID);
+    const selectedDriver = sortedDriversArray.find((driver) => driver.id === routeID);
 
     if (!selectedDriver) {
         const myError = new Error();

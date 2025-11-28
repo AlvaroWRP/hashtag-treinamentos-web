@@ -1,0 +1,78 @@
+.container {
+    background-color: hsla(0, 0%, 100%, 0.9);
+    border-radius: 1rem;
+    box-shadow: 4px 4px 20px black;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    margin: 10px;
+}
+
+.image {
+    border-radius: 100%;
+    box-shadow: 0 8px 16px -8px black;
+    margin: 1rem auto;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.name {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.info {
+    border-top: solid 1px black;
+    padding: 0.75rem 0;
+    color: #222;
+    font-size: 0.9;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1.5rem;
+    border-top: solid 1px black;
+    padding-top: 1.5rem;
+}
+
+.linkButton {
+    background: linear-gradient(45deg, #8e44ad, #f78ca0);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px black;
+    color: white;
+    font-weight: 600;
+    padding: 0.625rem 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    width: 75%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkButtonMale {
+    background: linear-gradient(45deg, #2980b9, #27ae60);
+}
+
+.linkButtonFemale {
+    background: linear-gradient(45deg, #8e44ad, #f78ca0);
+}
+
+.linkButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px black;
+}
+
+.icon {
+    width: 50px;
+    height: 25px;
+    margin-right: 10px;
+}

@@ -3,9 +3,7 @@ import { EventEmitter } from 'node:events';
 const myEmitter = new EventEmitter();
 
 myEmitter.on('event', (parameter1, parameter2) =>
-    console.log(
-        `emissor disparado com os parâmetros: ${parameter1}, ${parameter2}`
-    )
+    console.log(`emissor disparado com os parâmetros: ${parameter1}, ${parameter2}`),
 );
 
 myEmitter.emit('event', 'banana', 'maçã');

@@ -33,18 +33,14 @@ console.log('\n' + '--------------------------------------------------' + '\n');
 // o parâmetro rest recebe um número infinito de argumentos e os tranforma em um array, evitando
 // assim a necessidade de criar uma função enorme que tenha vários parâmetros com valores padrão
 function gradesAverage(name, surname, ...grades) {
-    const gradesSum = grades.reduce(
-        (accumulator, currentValue) => accumulator + currentValue
-    );
+    const gradesSum = grades.reduce((accumulator, currentValue) => accumulator + currentValue);
 
     const gradesLength = grades.length;
 
     return `Student "${name} ${surname}" has a final grade of ${gradesSum / gradesLength}.`;
 }
 
-console.log(
-    gradesAverage('firstName', 'lastName', 4.5, 4, 6, 7.5)
-);
+console.log(gradesAverage('firstName', 'lastName', 4.5, 4, 6, 7.5));
 
 console.log('\n' + '--------------------------------------------------' + '\n');
 

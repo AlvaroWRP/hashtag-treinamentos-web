@@ -5,9 +5,7 @@ import { URL } from 'node:url';
 const server = http.createServer();
 
 server.on('request', (request, response) => {
-    const urlObject = new URL(
-        `http://${request.headers.host}${request.url}`
-    );
+    const urlObject = new URL(`http://${request.headers.host}${request.url}`);
 
     if (urlObject.pathname === '/') {
         const stringifiedJson = JSON.stringify(itemsStock);
@@ -23,9 +21,7 @@ server.on('request', (request, response) => {
             return;
         }
 
-        const unavailableProducts = itemsStock.filter(
-            product => product.amountLeft === 0
-        );
+        const unavailableProducts = itemsStock.filter((product) => product.amountLeft === 0);
 
         const stringifiedUnavailableProducts = JSON.stringify(unavailableProducts);
 
@@ -34,7 +30,7 @@ server.on('request', (request, response) => {
         response.end();
     } else if (urlObject.pathname === '/get-by-id') {
         const selectedProduct = itemsStock.find(
-            product => product.id === Number(urlObject.searchParams.get('id'))
+            (product) => product.id === Number(urlObject.searchParams.get('id')),
         );
 
         const stringifiedSelectedProduct = JSON.stringify(selectedProduct);
